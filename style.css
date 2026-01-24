@@ -1,0 +1,316 @@
+/* General Body and Main Layout */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Dimmed background */
+    color: #e0e0e0; /* Light text for dimmed theme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2e2e4a; /* Slightly lighter background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Section */
+.header {
+    background-color: #16213e; /* Darker header background */
+    padding: 40px 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0f3460; /* Accent color for border */
+    margin-bottom: 20px;
+}
+
+.name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5em;
+    margin: 0;
+    color: #e94560; /* Accent color for name */
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4em;
+    color: #b0b0d0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-info {
+    font-size: 0.95em;
+    color: #c0c0e0;
+}
+
+.contact-info a {
+    color: #53bf9d; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #6edaa6;
+    text-decoration: underline;
+}
+
+/* Main Content Sections */
+.main-content {
+    padding-top: 0;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #2e2e4a;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2em;
+    color: #e94560; /* Accent color */
+    border-bottom: 2px solid #0f3460; /* Underline accent */
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #e0e0e0;
+}
+
+/* Experience and Education */
+.experience-item, .education-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3c3c5c;
+}
+
+.experience-item:last-child, .education-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job-title, .degree-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold for titles */
+    font-size: 1.3em;
+    color: #53bf9d; /* Accent color for titles */
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.job-duration, .degree-duration {
+    font-weight: 400;
+    font-size: 0.9em;
+    color: #c0c0e0;
+}
+
+.company, .university {
+    font-weight: 500; /* Medium for company/university */
+    color: #b0b0d0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.job-description {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.job-description li {
+    margin-bottom: 5px;
+    padding-left: 10px; /* This creates space for the custom bullet */
+    position: relative;
+}
+
+.job-description li::before {
+    content: '•';
+    color: #e94560; /* Bullet point color */
+    position: absolute;
+    left: 0;
+}
+
+/* Skills and Languages */
+.skills-list, .languages-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li, .languages-list li {
+    background-color: #0f3460; /* Darker accent for list items */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #e0e0e0;
+    font-size: 0.95em;
+}
+
+/* GitHub Projects */
+.github-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.github-project-card {
+    background-color: #1a1a2e; /* Even darker for project cards */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.github-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.github-project-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #e94560;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.github-project-card p {
+    font-size: 0.9em;
+    color: #c0c0e0;
+    flex-grow: 1;
+}
+
+.github-project-card a {
+    color: #53bf9d;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.github-project-card a:hover {
+    text-decoration: underline;
+    color: #6edaa6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.8em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .contact-info span, .contact-info a {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .contact-info span:last-of-type, .contact-info a:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .job-title, .degree-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-duration, .degree-duration {
+        margin-top: 5px;
+        font-size: 0.85em;
+    }
+
+    .github-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 2.2em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+    }
+
+    .contact-info {
+        font-size: 0.85em;
+    }
+
+    .job-title, .degree-title {
+        font-size: 1.1em;
+    }
+
+    .company, .university {
+        font-size: 0.9em;
+    }
+}
