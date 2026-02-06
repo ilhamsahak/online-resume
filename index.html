@@ -1,124 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohd Ilham Ishak Bin Aman - Resume</title>
+    <title>Mohd Ilham Ishak Bin Aman - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">Ilham Ishak</a>
+            <div class="nav-links">
+                <a href="#profile">Profile</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+    </nav>
+
     <header class="header">
-        <div class="container header-content">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQH8JtAH023iJA/profile-displayphoto-scale_400_400/B56Zhqr.5yHcAg-/0/1754136572127?e=1770854400&v=beta&t=w4-uLLelQNvR8XxTJren2SKWINGekJ8ey3XB4hOBrZU" alt="Mohd Ilham Ishak Bin Aman" class="profile-photo">
-            <div class="header-info">
-                <h1 class="name">MOHD ILHAM ISHAK BIN AMAN</h1>
-                <p class="tagline">Marketing Strategist/Analyst</p>
-                <div class="contact-info">
-                    <span>Perak, Malaysia</span> | 
-                    <span>+6011-3522 8958</span> | 
-                    <a href="mailto:ilhamishakaman@gmail.com">ilhamishakaman@gmail.com</a> | 
-                    <a href="https://www.linkedin.com/in/mohd-ilham-ishak-aman-363985128/" target="_blank">LinkedIn Profile</a>
-                </div>
+        <div class="container">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQH8JtAH023iJA/profile-displayphoto-scale_400_400/B56Zhqr.5yHcAg-/0/1754136572127?e=1770854400&v=beta&t=w4-uLLelQNvR8XxTJren2SKWINGekJ8ey3XB4hOBrZU"
+                alt="Mohd Ilham Ishak" class="profile-photo">
+            <h1 class="name">MOHD ILHAM ISHAK</h1>
+            <p class="tagline">Data Analyst</p>
+            <div class="contact-info">
+                <span><i data-lucide="map-pin"></i> Perak, Malaysia</span>
+                <a href="tel:+601171320205"><i data-lucide="phone"></i> +6011-7132 0205</a>
+                <a href="mailto:ilhamishakaman@gmail.com"><i data-lucide="mail"></i> ilhamishakaman@gmail.com</a>
+                <a href="https://www.linkedin.com/in/mohd-ilham-ishak-aman-363985128/" target="_blank"><i
+                        data-lucide="linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </header>
 
     <main class="container main-content">
-        <section class="section">
-            <h2 class="section-title">Profile Summary</h2>
-            <p class="body-text">Data-driven professional with a background in Electrical Engineering from Universiti Sains Malaysia, specializing in leveraging data to create smart marketing strategies and deliver impactful business results.</p>
+        <section id="profile" class="section">
+            <h2 class="section-title"><i data-lucide="user"></i> Professional Summary</h2>
+            <div class="card">
+                <p class="body-text">Data Analyst with a strong foundation in Electrical Engineering and hands-on
+                    experience in SQL analytics, Google BigQuery data warehousing, ETL/ELT pipelines, and dashboard
+                    development. Proven ability to integrate multi-source datasets, normalize schemas, and deliver
+                    analysis-ready data to support business decision-making. Experienced in building automated data
+                    workflows, KPI reporting, and internal analytics platforms across F&B, operations, and research
+                    environments.</p>
+            </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="experience-item">
-                <h3 class="job-title">Marketing Strategist/Analyst <span class="job-duration">2022 - 2024</span></h3>
-                <p class="company body-text">Pasta Port (SJD Empire SDN BHD), Penang.</p>
-                <ul class="job-description body-text">
-                    <li>Created and executed marketing plans that improved brand visibility and attracted new customers.</li>
-                    <li>Analyzed market trends and campaign results to adjust strategies and boost performance.</li>
-                    <li>Worked with teams across the company to ensure marketing efforts supported overall business goals.</li>
-                    <li>Managed budgets effectively and shared insights with stakeholders to guide decisions.</li>
-                    <li>Helped the company grow from 2 to 7 branches in 2 years.</li>
+        <section id="skills" class="section">
+            <h2 class="section-title"><i data-lucide="award"></i> Core Data & Analytics Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category card">
+                    <h3><i data-lucide="bar-chart-3"></i> Data Analysis & BI</h3>
+                    <ul class="skills-list">
+                        <li>Exploratory Data Analysis (EDA)</li>
+                        <li>KPI Definition</li>
+                        <li>Performance Tracking</li>
+                        <li>Trend & Variance Analysis</li>
+                        <li>Dashboard Design</li>
+                        <li>Executive Reporting</li>
+                        <li>Data Quality Validation</li>
+                    </ul>
+                </div>
+                <div class="skills-category card">
+                    <h3><i data-lucide="database"></i> SQL & Data Warehousing</h3>
+                    <ul class="skills-list">
+                        <li>Google BigQuery</li>
+                        <li>SQL (Analytics, Views)</li>
+                        <li>Data Modeling</li>
+                        <li>Schema Normalization</li>
+                    </ul>
+                </div>
+                <div class="skills-category card">
+                    <h3><i data-lucide="refresh-cw"></i> ETL & Engineering</h3>
+                    <ul class="skills-list">
+                        <li>ETL / ELT Pipelines</li>
+                        <li>Multi-Source Integration</li>
+                        <li>SKU Mapping</li>
+                        <li>Batch Processing</li>
+                        <li>Data Transformation</li>
+                        <li>Staging Layer Design</li>
+                    </ul>
+                </div>
+                <div class="skills-category card">
+                    <h3><i data-lucide="tool"></i> Tools & Workflow</h3>
+                    <ul class="skills-list">
+                        <li>Looker Studio</li>
+                        <li>Google Sheets (Apps Script)</li>
+                        <li>Excel (Power Query)</li>
+                        <li>Google Analytics (GA4)</li>
+                        <li>MATLAB</li>
+                        <li>Git</li>
+                        <li>Next.js & TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title"><i data-lucide="star"></i> Featured Project</h2>
+            <div class="card featured-project">
+                <div class="project-header">
+                    <h3 class="job-title">Sales Analytics & Automation Platform (F&B)</h3>
+                    <span class="job-duration">Project-Based</span>
+                </div>
+                <p class="body-text" style="margin-bottom: 1rem;">Designed and implemented a serverless, multi-source
+                    sales analytics platform integrating POS, GrabFood, and foodpanda data to enable centralized
+                    performance tracking and executive reporting.</p>
+                <ul class="job-description">
+                    <li>Designed and implemented ETL / ELT pipelines to extract raw sales data and load analysis-ready
+                        datasets.</li>
+                    <li>Automated CSV ingestion, validation, and daily scheduled batch jobs using Google Apps Script.
+                    </li>
+                    <li>Modeled and warehoused structured datasets in Google BigQuery for scalable SQL analytics.</li>
+                    <li>Developed executive dashboards and reports using Looker Studio.</li>
+                    <li>Built an internal analytics web dashboard using Next.js (React) with TypeScript and Tailwind
+                        CSS.</li>
                 </ul>
             </div>
-            <div class="experience-item">
-                <h3 class="job-title">Part Time Freelance <span class="job-duration">2015 - Present</span></h3>
-                <p class="company body-text">Dimensa Solution, Remote Work.</p>
-                <ul class="job-description body-text">
-                    <li>Managed marketing campaigns and created pitch materials.</li>
-                    <li>Handled accounting documents and project workflows.</li>
-                    <li>Designed websites, oversaw development, and trained clients.</li>
-                    <li>Created and optimized Facebook/Instagram ads with performance reporting.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3 class="job-title">Data Mining Setup (Project based) <span class="job-duration">2019</span></h3>
-                <p class="company body-text">R3ka Resources, Penang. Client: Malaysian Institude of Road Safety Research (MIROS)</p>
-                <ul class="job-description body-text">
-                    <li>Developed a system to detect approaching vehicles for motorcycle blindspot safety, using Arduino, ultrasonic sensors, LiDAR, and cameras.</li>
-                    <li>Managed data sorting, tabulation, and integration for system functionality.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3 class="job-title">Research Assistant <span class="job-duration">2015 - 2017</span></h3>
-                <p class="company body-text">Dimensa Solution, Remote Work.</p>
-                <ul class="job-description body-text">
-                    <li>Reduced PAPR in OFDM systems using MATLAB simulations and power reduction techniques, including AI methods like Genetic Algorithms.</li>
-                    <li>Conducted data analysis, prepared reports, and presented findings through detailed discussions and tabulations.</li>
-                    <li>Authored academic journals and research papers.</li>
-                </ul>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3 class="degree-title">Bachelor's Degree, Electrical Engineering <span class="degree-duration">2011 – 2015</span></h3>
-                <p class="university body-text">Universiti Sains Malaysia</p>
-            </div>
-            <div class="education-item">
-                <h3 class="degree-title">Pre-University Program, Physical Science <span class="degree-duration">2010 – 2011</span></h3>
-                <p class="university body-text">Matriculation College Negeri Sembilan</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Skills</h2>
-            <ul class="skills-list body-text">
-                <li>Communication</li>
-                <li>Analytical</li>
-                <li>Reporting</li>
-                <li>Entrepreneurship</li>
-                <li>Engineering</li>
-                <li>WordPress</li>
-                <li>Meta Ads Manager</li>
-                <li>Management</li>
-                <li>Presentation</li>
-                <li>Problem Solving</li>
-                <li>Advance Microsoft Excel</li>
-                <li>Google Analytics</li>
-                <li>SQL</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Languages</h2>
-            <ul class="languages-list body-text">
-                <li>Malay (Native, Writing and Speaking)</li>
-                <li>English (Writing and Speaking)</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">GitHub Projects</h2>
+            <h2 class="section-title" style="margin-top: 4rem;"><i data-lucide="github"></i> Other GitHub Projects</h2>
             <div id="github-projects" class="github-projects-grid">
                 <p class="body-text">Loading GitHub projects...</p>
             </div>
         </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title"><i data-lucide="briefcase"></i> Work Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Data Analyst / Business Data Support</h3>
+                        <span class="job-duration">2022 - 2024</span>
+                    </div>
+                    <span class="company">Pasta Port (SJD Empire SDN BHD), Penang</span>
+                    <ul class="job-description">
+                        <li>Analyzed sales, marketing, and operational datasets to support business performance
+                            monitoring and expansion planning.</li>
+                        <li>Built BigQuery-based SQL queries and Excel dashboards to track KPIs and trends.</li>
+                        <li>Cleaned, aggregated, and integrated data from multiple sources for management reporting.
+                        </li>
+                        <li>Delivered analytical insights that supported company growth from 2 to 7 outlets within 2
+                            years.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Freelance Data & Analytics Support</h3>
+                        <span class="job-duration">2015 - Present</span>
+                    </div>
+                    <span class="company">Dimensa Solution, Remote</span>
+                    <ul class="job-description">
+                        <li>Performed data cleaning, analysis, and structured reporting for business and marketing
+                            datasets.</li>
+                        <li>Created KPI tracking reports using Excel, analytics tools, and dashboards.</li>
+                        <li>Supported workflow optimization through structured data documentation.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Data Mining & Sensor Data Project</h3>
+                        <span class="job-duration">2019</span>
+                    </div>
+                    <span class="company">R3ka Resources, Penang (Client: MIROS)</span>
+                    <ul class="job-description">
+                        <li>Collected and processed sensor data from Arduino-based systems (ultrasonic sensors, LiDAR,
+                            cameras).</li>
+                        <li>Performed data sorting, validation, and tabulation to support system evaluation.</li>
+                        <li>Integrated multi-sensor datasets into structured formats for analysis and testing.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Research Assistant (Data & Signal Analysis)</h3>
+                        <span class="job-duration">2015 - 2017</span>
+                    </div>
+                    <span class="company">Dimensa Solution, Remote</span>
+                    <ul class="job-description">
+                        <li>Conducted data analysis and MATLAB simulations for OFDM system optimization.</li>
+                        <li>Applied statistical and AI-based techniques, including Genetic Algorithms, for performance
+                            improvement.</li>
+                        <li>Authored academic journals and technical research papers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title"><i data-lucide="graduation-cap"></i> Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <div class="job-header">
+                        <h3 class="degree-title">Bachelor of Electrical Engineering</h3>
+                        <span class="degree-duration">2011 – 2015</span>
+                    </div>
+                    <span class="university">Universiti Sains Malaysia</span>
+                </div>
+                <div class="education-item">
+                    <div class="job-header">
+                        <h3 class="degree-title">Pre-University (Physical Science)</h3>
+                        <span class="degree-duration">2010 – 2011</span>
+                    </div>
+                    <span class="university">Matriculation College Negeri Sembilan</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages" class="section">
+            <h2 class="section-title"><i data-lucide="languages"></i> Languages</h2>
+            <ul class="languages-list">
+                <li>Malay (Native)</li>
+                <li>English (Fluent)</li>
+            </ul>
+        </section>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
