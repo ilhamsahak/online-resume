@@ -27,19 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             githubProjectsContainer.innerHTML = '';
             await displayProjects(allRepos.slice(0, initialDisplayCount));
 
-            if (allRepos.length > initialDisplayCount) {
-                const seeMoreButton = document.createElement('button');
-                seeMoreButton.textContent = 'View More Projects';
-                seeMoreButton.classList.add('see-more-button');
-                githubProjectsContainer.after(seeMoreButton);
-
-                seeMoreButton.addEventListener('click', async () => {
-                    seeMoreButton.disabled = true;
-                    seeMoreButton.textContent = 'Loading...';
-                    await displayProjects(allRepos.slice(initialDisplayCount));
-                    seeMoreButton.remove();
-                });
-            }
+            githubProjectsContainer.innerHTML = '';
+            await displayProjects(allRepos.slice(0, initialDisplayCount));
 
         } catch (error) {
             console.error('Error fetching GitHub repositories:', error);
