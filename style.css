@@ -153,9 +153,10 @@ body {
         font-size: 1.5rem;
     }
 
-    .card {
-        padding: 1.5rem;
-        border-radius: 1rem;
+    .card,
+    .experience-item {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
     }
 }
 
@@ -174,27 +175,50 @@ h4 {
     padding: 0 2rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
-        padding: 0 1.25rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding: 0 1rem;
     }
 }
 
 /* Header & Hero */
 .header {
     background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent);
-    padding: 6rem 0 4rem;
+    padding: 10rem 0 8rem;
     text-align: center;
 }
 
-.profile-photo {
+.profile-photo-container {
     width: 160px;
     height: 160px;
     border-radius: 50%;
     border: 4px solid var(--primary);
-    margin-bottom: 2rem;
+    margin: 0 auto 2.5rem;
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transform: scale(1.35);
+    /* Zoomed in more */
+    object-position: center 20%;
+    /* Centers the face better if necessary */
+    transition: transform 0.3s ease;
+}
+
+.profile-photo-container:hover .profile-photo {
+    transform: scale(1.45);
+    /* Subtle hover interaction */
 }
 
 .name {
@@ -203,7 +227,7 @@ h4 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     letter-spacing: -1px;
 }
 
@@ -211,14 +235,14 @@ h4 {
     font-size: 1.5rem;
     color: var(--text-muted);
     font-weight: 500;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .contact-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     font-size: 0.95rem;
 }
 
@@ -226,7 +250,11 @@ h4 {
     .contact-info {
         flex-direction: column;
         align-items: center;
-        gap: 0.75rem;
+        gap: 1rem;
+    }
+
+    .header {
+        padding: 8rem 0 6rem;
     }
 }
 
@@ -243,10 +271,11 @@ h4 {
 /* Main Content Sections */
 .main-content {
     padding: 4rem 0;
+    padding-bottom: 8rem;
 }
 
 .section {
-    margin-bottom: 6rem;
+    margin-bottom: 10rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s forwards;
@@ -254,17 +283,23 @@ h4 {
 
 @media (max-width: 768px) {
     .section {
-        margin-bottom: 4rem;
+        margin-bottom: 7rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
     }
 }
 
 .section-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
+    color: var(--primary);
 }
 
 .section-title::after {
@@ -472,7 +507,7 @@ h4 {
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .github-project-card {
