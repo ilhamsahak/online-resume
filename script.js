@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const headers = githubToken ? { 'Authorization': `token ${githubToken}` } : {};
             const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`, { headers });
 
+            if (reposResponse.status === 403) {
+                throw new Error("GitHub API rate limit reached. Please try again in an hour or add a personal access token.");
+            }
+
             if (!reposResponse.ok) throw new Error(`GitHub API error: ${reposResponse.status}`);
 
             allRepos = await reposResponse.json();
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             githubProjectsContainer.innerHTML = '';
-            displayProjects(allRepos.slice(0, initialDisplayCount));
+            await displayProjects(allRepos.slice(0, initialDisplayCount));
 
             if (allRepos.length > initialDisplayCount) {
                 const seeMoreButton = document.createElement('button');
@@ -29,15 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 seeMoreButton.classList.add('see-more-button');
                 githubProjectsContainer.after(seeMoreButton);
 
-                seeMoreButton.addEventListener('click', () => {
-                    displayProjects(allRepos.slice(initialDisplayCount));
+                seeMoreButton.addEventListener('click', async () => {
+                    seeMoreButton.disabled = true;
+                    seeMoreButton.textContent = 'Loading...';
+                    await displayProjects(allRepos.slice(initialDisplayCount));
                     seeMoreButton.remove();
                 });
             }
 
         } catch (error) {
             console.error('Error fetching GitHub repositories:', error);
-            githubProjectsContainer.innerHTML = `<p class="body-text" style="color: #ef4444;">Failed to load projects: ${error.message}</p>`;
+            githubProjectsContainer.innerHTML = `
+                <div class="error-container" style="padding: 2rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 1rem; background: rgba(239, 68, 68, 0.05);">
+                    <p class="body-text" style="color: #ef4444; margin-bottom: 1rem;">Failed to load projects: ${error.message}</p>
+                    <button onclick="location.reload()" class="see-more-button" style="margin: 0;">Retry Loading</button>
+                </div>
+            `;
         }
     }
 
