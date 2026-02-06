@@ -153,9 +153,15 @@ body {
         font-size: 1.5rem;
     }
 
-    .card,
-    .experience-item {
-        padding: 1.25rem;
+    .card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .experience-item,
+    .education-item {
+        padding: 1.5rem 1.25rem 1.5rem 2.25rem;
+        /* Increased left padding for timeline */
         border-radius: 1.25rem;
     }
 }
@@ -506,7 +512,7 @@ h4 {
 /* GitHub Grid */
 .github-projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -618,43 +624,4 @@ h4 {
 
 .section:nth-child(4) {
     animation-delay: 0.4s;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .name {
-        font-size: 2.25rem;
-    }
-
-    .job-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    .header {
-        padding: 2rem 0;
-    }
-
-    .profile-photo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    .main-content {
-        padding: 2rem 0;
-    }
-
-    .section {
-        margin-bottom: 3rem;
-    }
 }
