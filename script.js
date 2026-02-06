@@ -123,6 +123,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
+    // Mobile Menu Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const navToggleIcon = navToggle.querySelector('i');
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinksContainer.classList.toggle('is-open');
+        navToggleIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+        lucide.createIcons();
+    });
+
+    // Close menu when clicking links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('is-open');
+            navToggleIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        });
+    });
+
     sections.forEach(section => observer.observe(section));
 
     fetchRepositories();
