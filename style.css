@@ -121,6 +121,31 @@ body {
     border-radius: 2px;
 }
 
+.nav-download-btn {
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-download-btn:hover {
+    background: var(--primary-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.nav-download-btn::after {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .nav {
         overflow: visible;
@@ -241,13 +266,13 @@ h4 {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 1.5rem;
+        padding: 0 2rem;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 }
 
@@ -314,11 +339,11 @@ h4 {
     .contact-info {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .header {
-        padding: 8rem 0 6rem;
+        padding: 6rem 0 4rem;
     }
 }
 
@@ -334,12 +359,11 @@ h4 {
 
 /* Main Content Sections */
 .main-content {
-    padding: 4rem 0;
-    padding-bottom: 8rem;
+    padding: 2rem 0 10rem;
 }
 
 .section {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s forwards;
@@ -347,11 +371,11 @@ h4 {
 
 @media (max-width: 768px) {
     .section {
-        margin-bottom: 7rem;
+        margin-bottom: 8rem;
     }
 
     .section-title {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
     }
 }
 
@@ -383,8 +407,8 @@ h4 {
 .card {
     background: var(--card-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 1rem;
-    padding: 2rem;
+    border-radius: 1.25rem;
+    padding: 2.5rem;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -399,15 +423,15 @@ h4 {
 .education-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .experience-item,
 .education-item {
     position: relative;
-    padding-left: 2rem;
+    padding-left: 2.5rem;
     border-left: 2px solid var(--glass-border);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .experience-item::before,
@@ -511,8 +535,20 @@ h4 {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .skills-category {
@@ -699,6 +735,53 @@ h4 {
     background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.cta-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.download-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+}
+
+.download-button i {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 640px) {
+    .cta-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .download-button {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Animations */

@@ -2,14 +2,14 @@ const projects = [
     {
         title: "Dashboard Analytics",
         description: "Custom analytics dashboard with automated data pipelines. Private published due to NDA",
-        tech: ["Next.js", "BigQuery", "Looker Studio", "Tailwind", "Google Appscript"],
+        tech: ["Next.js", "BigQuery", "Looker Studio", "Tailwind CSS", "Google Appscript"],
         link: "#",
         type: "private"
     },
     {
         title: "Inventory System",
         description: "Internal system to manage ingredients, products, and worker access. Private published due to NDA",
-        tech: ["Next.js", "Tailwind", "PostgreSQL", "ChartJS"],
+        tech: ["Next.js", "Tailwind CSS", "PostgreSQL", "ChartJS"],
         link: "#",
         type: "private"
     },
@@ -30,7 +30,7 @@ const projects = [
     {
         title: "IOTEG",
         description: "A professional engineering solution homepage and headless e-commerce store. Currently developing innovative IoT devices aimed at reducing motorcycle vibration and enhancing the riding experience.",
-        tech: ["Next.js", "WooCommerce", "Headless E-commerce", "Tailwind"],
+        tech: ["Next.js", "WooCommerce", "Headless E-commerce", "Tailwind CSS"],
         link: "https://ioteg.com/",
         type: "public"
     },
