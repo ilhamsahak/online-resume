@@ -18,7 +18,7 @@
                 <a href="#projects">Featured Project</a>
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
-                <a href="#github-repos">GitHub</a>
+                <a href="#projects-showcase">Projects</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle menu">
                 <i data-lucide="menu"></i>
@@ -221,18 +221,21 @@
             </ul>
         </section>
 
-        <section id="github-repos" class="section">
-            <h2 class="section-title"><i data-lucide="github"></i> Other GitHub Projects</h2>
-            <div id="github-projects" class="github-projects-grid">
-                <p class="body-text">Loading GitHub projects...</p>
+        <section id="projects-showcase" class="section">
+            <h2 class="section-title"><i data-lucide="folder-kanban"></i> Selected Projects</h2>
+            <div id="projects-grid" class="projects-grid">
+                <!-- Projects will be injected by script.js -->
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="https://github.com/ilhamsahak?tab=repositories" target="_blank" class="see-more-button"
-                    style="text-decoration: none; display: inline-block;">View All Repositories</a>
+                    style="text-decoration: none; display: inline-block;"><i data-lucide="github"
+                        style="width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> View More on
+                    GitHub</a>
             </div>
         </section>
     </main>
 
+    <script src="project.js"></script>
     <script src="script.js"></script>
     <script>
         lucide.createIcons();

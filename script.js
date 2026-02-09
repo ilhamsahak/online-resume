@@ -1,103 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const githubProjectsContainer = document.getElementById('github-projects');
-    const username = 'ilhamsahak';
-    const githubToken = ''; // Optional: Add token if needed for higher rate limits
-    const initialDisplayCount = 6;
-    let allRepos = [];
+    const projectsContainer = document.getElementById('projects-grid');
 
-    async function fetchRepositories() {
-        try {
-            githubProjectsContainer.innerHTML = '<p class="loading-message body-text">Fetching projects from GitHub...</p>';
-            const headers = githubToken ? { 'Authorization': `token ${githubToken}` } : {};
-            const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`, { headers });
+    function renderProjects() {
+        const projectData = window.projects || (typeof projects !== 'undefined' ? projects : null);
 
-            if (reposResponse.status === 403) {
-                throw new Error("GitHub API rate limit reached. Please try again in an hour or add a personal access token.");
-            }
+        if (!projectsContainer || !projectData) return;
 
-            if (!reposResponse.ok) throw new Error(`GitHub API error: ${reposResponse.status}`);
+        projectsContainer.innerHTML = '';
+        projectData.forEach(project => {
+            const card = createProjectCard(project);
+            projectsContainer.appendChild(card);
+        });
 
-            allRepos = await reposResponse.json();
-
-            if (allRepos.length === 0) {
-                githubProjectsContainer.innerHTML = '<p class="body-text">No public repositories found.</p>';
-                return;
-            }
-
-            githubProjectsContainer.innerHTML = '';
-            await displayProjects(allRepos.slice(0, initialDisplayCount));
-
-            githubProjectsContainer.innerHTML = '';
-            await displayProjects(allRepos.slice(0, initialDisplayCount));
-
-        } catch (error) {
-            console.error('Error fetching GitHub repositories:', error);
-            githubProjectsContainer.innerHTML = `
-                <div class="error-container" style="padding: 2rem; text-align: center; border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 1rem; background: rgba(239, 68, 68, 0.05);">
-                    <p class="body-text" style="color: #ef4444; margin-bottom: 1rem;">Failed to load projects: ${error.message}</p>
-                    <button onclick="location.reload()" class="see-more-button" style="margin: 0;">Retry Loading</button>
-                </div>
-            `;
+        if (window.lucide) {
+            window.lucide.createIcons();
         }
     }
 
-    async function displayProjects(reposToDisplay) {
-        const headers = githubToken ? { 'Authorization': `token ${githubToken}` } : {};
+    // Initialize with retries to handle potential script loading race conditions
+    renderProjects();
+    setTimeout(renderProjects, 100);
+    setTimeout(renderProjects, 500);
 
-        for (const repo of reposToDisplay) {
-            if (!repo.languages) {
-                try {
-                    const langRes = await fetch(repo.languages_url, { headers });
-                    repo.languages = langRes.ok ? await langRes.json() : {};
-                } catch (e) {
-                    repo.languages = {};
-                }
-            }
-            appendRepositoryCard(repo);
-        }
-    }
-
-    function appendRepositoryCard(repo) {
+    function createProjectCard(project) {
         const card = document.createElement('div');
-        card.classList.add('github-project-card');
+        card.classList.add('project-card-new');
 
-        const title = document.createElement('h3');
-        const link = document.createElement('a');
-        link.href = repo.html_url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = repo.name.replace(/-/g, ' ');
-        title.appendChild(link);
-        card.appendChild(title);
+        const isPrivate = project.type === 'private' || project.link === '#';
 
-        if (repo.description) {
-            const desc = document.createElement('p');
-            desc.textContent = repo.description.length > 100
-                ? repo.description.substring(0, 100) + '...'
-                : repo.description;
-            card.appendChild(desc);
-        }
+        card.innerHTML = `
+            <div class="project-content">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i data-lucide="${isPrivate ? 'lock' : 'external-link'}"></i>
+                    </div>
+                    ${isPrivate ? '<span class="status-badge private">NDA Protected</span>' : '<span class="status-badge public">Live Project</span>'}
+                </div>
+                <h3 class="project-title-new">${project.title}</h3>
+                <p class="project-description-new">${project.description}</p>
+                <div class="project-tech-stack">
+                    ${project.tech.map(t => `<span class="tech-tag-mini">${t}</span>`).join('')}
+                </div>
+            </div>
+            ${!isPrivate ? `
+                <a href="${project.link}" target="_blank" class="project-link-overlay" aria-label="View ${project.title}"></a>
+            ` : ''}
+        `;
 
-        const langList = document.createElement('ul');
-        langList.classList.add('language-list');
-
-        const languages = Object.keys(repo.languages).slice(0, 3);
-        if (languages.length > 0) {
-            languages.forEach(lang => {
-                const item = document.createElement('li');
-                item.classList.add('language-item');
-                item.textContent = lang;
-                langList.appendChild(item);
-            });
-        } else if (repo.language) {
-            const item = document.createElement('li');
-            item.classList.add('language-item');
-            item.textContent = repo.language;
-            langList.appendChild(item);
-        }
-
-        card.appendChild(langList);
-        githubProjectsContainer.appendChild(card);
+        return card;
     }
 
     // Navigation Active State
@@ -126,24 +76,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
-    const navToggleIcon = navToggle.querySelector('i');
 
-    navToggle.addEventListener('click', () => {
-        const isOpen = navLinksContainer.classList.toggle('is-open');
-        navToggleIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-        lucide.createIcons();
-    });
-
-    // Close menu when clicking links
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinksContainer.classList.remove('is-open');
-            navToggleIcon.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
+    if (navToggle && navLinksContainer) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinksContainer.classList.toggle('is-open');
+            const icon = navToggle.querySelector('i, svg');
+            if (icon) {
+                icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }
         });
-    });
+
+        // Close menu when clicking links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('is-open');
+                const icon = navToggle.querySelector('i, svg');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    if (window.lucide) {
+                        window.lucide.createIcons();
+                    }
+                }
+            });
+        });
+    }
 
     sections.forEach(section => observer.observe(section));
 
-    fetchRepositories();
+
 });
