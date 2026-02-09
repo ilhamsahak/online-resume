@@ -2,7 +2,7 @@ const projects = [
     {
         title: "Dashboard Analytics",
         description: "Custom analytics dashboard with automated data pipelines. Private published due to NDA",
-        tech: ["React", "Vite", "BigQuery", "Looker Studio"],
+        tech: ["Next.js", "BigQuery", "Looker Studio", "Tailwind", "Google Appscript"],
         link: "#",
         type: "private"
     },
