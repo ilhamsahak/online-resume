@@ -14,6 +14,13 @@ const projects = [
         type: "private"
     },
     {
+        title: "Content Management System (R&D Ingredient Library)",
+        description: "Built an internal CMS for Adabi’s R&D team to centralize ingredient, premix, and product data. The system supports detailed records, searchable listings, and role-based access, improving data accessibility and reducing manual lookups.",
+        tech: ["Next.js", "React", "Tailwind CSS", "Node.js", "REST APIs", "MySQL"],
+        link: "#",
+        type: "private"
+    },
+    {
         title: "Malaysian Translator Associate",
         description: "Architected a high-performance localization platform using a Headless CMS and Next.js. Engineered custom content models for multi-language support and optimized editorial workflows for the Malaysian market.",
         tech: ["Next.js", "Headless CMS", "Tailwind CSS", "SEO"],
@@ -32,13 +39,6 @@ const projects = [
         description: "A specialized utility designed to facilitate 4v4 team scrims by providing a drafting system currently missing from the official Magic Chess Go Go application.",
         tech: ["React + Vite", "Tailwind CSS", "Firebase"],
         link: "https://magic-chess-draft.vercel.app/",
-        type: "public"
-    },
-    {
-        title: "SMKPBG Report Generator",
-        description: "An automated reporting utility for educators to streamline documentation. It dynamically populates school-standardized PDF templates with user input, ensuring consistency and saving administrative time.",
-        tech: ["HTML", "Vanilla CSS", "JavaScript", "Playwright"],
-        link: "https://ilhamsahak.github.io/OPR_SMKPBG_2026/",
         type: "public"
     }
 ];
