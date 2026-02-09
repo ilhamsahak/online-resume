@@ -16,7 +16,7 @@ const projects = [
     {
         title: "Content Management System (R&D Ingredient Library)",
         description: "Built an internal CMS for Adabi’s R&D team to centralize ingredient, premix, and product data. The system supports detailed records, searchable listings, and role-based access, improving data accessibility and reducing manual lookups.",
-        tech: ["Next.js", "React", "Tailwind CSS", "Node.js", "REST APIs", "MySQL"],
+        tech: ["Next.js", "Tailwind CSS", "Node.js", "REST APIs", "MySQL"],
         link: "#",
         type: "private"
     },
