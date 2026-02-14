@@ -1,8 +1,8 @@
 const projects = [
     {
-        title: "Dashboard Analytics",
-        description: "Custom analytics dashboard with automated data pipelines. Private published due to NDA",
-        tech: ["Next.js", "BigQuery", "Looker Studio", "Tailwind CSS", "Google Appscript"],
+        title: "Sales Analytics & Automation Platform (F&B)",
+        description: "Production-ready analytics platform supporting 7 retail outlets. Built automated Python-BigQuery pipelines and executive dashboards. Private due to NDA.",
+        tech: ["Python", "BigQuery", "Power BI", "Looker Studio", "PyInstaller"],
         link: "#",
         type: "private"
     },
