@@ -24,7 +24,7 @@
             </button>
             <div id="nav-menu" class="nav-links">
                 <a href="#profile">Profile</a>
-                <a href="#projects">Featured Project</a>
+                <a href="#projects">Featured Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
                 <a href="#projects-showcase">Projects</a>
@@ -115,39 +115,134 @@
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title"><i data-lucide="star"></i> Featured Project</h2>
-            <div class="card featured-project">
-                <div class="featured-project-banner">
-                    <h3>Sales Analytics &amp; Automation Platform (Multi-Outlet F&amp;B)</h3>
-                    <span class="featured-badge">Production-Ready</span>
+            <h2 class="section-title"><i data-lucide="star"></i> Featured Projects</h2>
+            <div class="card featured-project featured-tabs-wrapper">
+
+                <!-- Tab Nav -->
+                <div class="featured-tab-nav">
+                    <button class="featured-tab-btn active" data-tab="tab-analytics">
+                        <i data-lucide="bar-chart-3"></i> Sales Analytics
+                    </button>
+                    <button class="featured-tab-btn" data-tab="tab-abt">
+                        <i data-lucide="flask-conical"></i> A/B Testing
+                    </button>
+                    <button class="featured-tab-btn" data-tab="tab-reorder">
+                        <i data-lucide="package"></i> Reorder Optimization
+                    </button>
                 </div>
-                <div class="featured-project-body">
-                    <p class="featured-lead">Designed and deployed a production-ready analytics automation platform
-                        supporting 7 retail outlets.</p>
-                    <div class="featured-sections">
-                        <div class="featured-subsection">
-                            <h4><i data-lucide="database"></i> Data Pipeline &amp; Architecture</h4>
-                            <ul>
-                                <li>Built automated ingestion pipeline (Google Drive → Python → BigQuery).</li>
-                                <li>Implemented service-account authentication to eliminate manual login workflows.</li>
-                                <li>Structured layered warehouse architecture (Raw → Aggregated → BI Layer).</li>
-                                <li>Implemented date × outlet matrix modeling for time-series continuity.</li>
-                            </ul>
-                        </div>
-                        <div class="featured-subsection">
-                            <h4><i data-lucide="trending-up"></i> Operational &amp; Business Impact</h4>
-                            <ul>
-                                <li>Automated sales consolidation, reducing reporting time by ~95% (from 2-3 hours to
-                                    &lt;5 mins).</li>
-                                <li>Saved approximately 30–50 operational hours per month.</li>
-                                <li>Packaged ETL pipeline into password-protected installer, reducing setup time from ~4
-                                    hours to &lt;5 mins.</li>
-                                <li>Delivered trend-based insights to shareholders, supporting expansion from 2 to 7
-                                    outlets.</li>
-                            </ul>
+
+                <!-- Panel 1: Sales Analytics -->
+                <div class="featured-tab-panel active" id="tab-analytics">
+                    <div class="featured-project-banner">
+                        <h3>Sales Analytics &amp; Automation Platform (Multi-Outlet F&amp;B)</h3>
+                        <span class="featured-badge">Production-Ready</span>
+                    </div>
+                    <div class="featured-project-body">
+                        <p class="featured-lead">Designed and deployed a production-ready analytics automation platform
+                            supporting 7 retail outlets.</p>
+                        <div class="featured-sections">
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="database"></i> Data Pipeline &amp; Architecture</h4>
+                                <ul>
+                                    <li>Built automated ingestion pipeline (Google Drive → Python → BigQuery).</li>
+                                    <li>Implemented service-account authentication to eliminate manual login workflows.
+                                    </li>
+                                    <li>Structured layered warehouse architecture (Raw → Aggregated → BI Layer).</li>
+                                    <li>Implemented date × outlet matrix modeling for time-series continuity.</li>
+                                </ul>
+                            </div>
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="trending-up"></i> Operational &amp; Business Impact</h4>
+                                <ul>
+                                    <li>Automated sales consolidation, reducing reporting time by ~95% (from 2-3 hours
+                                        to &lt;5 mins).</li>
+                                    <li>Saved approximately 30–50 operational hours per month.</li>
+                                    <li>Packaged ETL pipeline into password-protected installer, reducing setup time
+                                        from ~4 hours to &lt;5 mins.</li>
+                                    <li>Delivered trend-based insights to shareholders, supporting expansion from 2 to 7
+                                        outlets.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Panel 2: A/B Testing -->
+                <div class="featured-tab-panel" id="tab-abt">
+                    <div class="featured-project-banner">
+                        <h3>Ingredient Brand A/B Testing for Cost Optimization (Multi-Outlet F&amp;B)</h3>
+                        <span class="featured-badge">Experimental</span>
+                    </div>
+                    <div class="featured-project-body">
+                        <p class="featured-lead">Conducted a 4-outlet A/B test to compare two ingredient brands and
+                            identify the most cost-effective option while maintaining product taste.</p>
+                        <div class="featured-sections">
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="flask-conical"></i> Methodology</h4>
+                                <ul>
+                                    <li>Assigned Brand A to Outlets A &amp; B and Brand B to Outlets C &amp; D for 2
+                                        weeks, then swapped brands to reduce outlet bias.</li>
+                                    <li>Worked with operations to adjust recipe ratios based on each brand's
+                                        characteristics.</li>
+                                    <li>Tracked product sales, ingredient usage, ingredient cost, and customer
+                                        complaints.</li>
+                                    <li>Used complaint-based monitoring, treating zero complaints as successful taste
+                                        consistency.</li>
+                                    <li>Compared results across both phases to evaluate ingredient efficiency and cost
+                                        per product.</li>
+                                </ul>
+                            </div>
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="trending-up"></i> Results</h4>
+                                <ul>
+                                    <li>Selected higher-yield ingredient brand with no increase in customer complaints.
+                                    </li>
+                                    <li>Achieved approximately 15% reduction in ingredient cost per product.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Reorder Optimization -->
+                <div class="featured-tab-panel" id="tab-reorder">
+                    <div class="featured-project-banner">
+                        <h3>Ingredient Reorder Point Optimization (Inventory Planning – F&amp;B)</h3>
+                        <span class="featured-badge">Operational</span>
+                    </div>
+                    <div class="featured-project-body">
+                        <p class="featured-lead">Developed a data-driven minimum stock model to trigger ingredient
+                            purchasing early, reducing emergency orders while improving cost efficiency, storage usage,
+                            and cashflow.</p>
+                        <div class="featured-sections">
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="package"></i> Methodology</h4>
+                                <ul>
+                                    <li>Analyzed historical ingredient usage using a 10-week weighted moving average,
+                                        placing higher emphasis on the latest 3 weeks to reflect current demand trends.
+                                    </li>
+                                    <li>Estimated average daily consumption and supplier lead time to calculate minimum
+                                        stock (reorder point) thresholds.</li>
+                                    <li>Implemented alert levels to prompt purchasing before inventory reached critical
+                                        levels.</li>
+                                    <li>Monitored stock movement and adjusted thresholds based on actual usage.</li>
+                                </ul>
+                            </div>
+                            <div class="featured-subsection">
+                                <h4><i data-lucide="trending-up"></i> Results</h4>
+                                <ul>
+                                    <li>Reduced emergency panic purchases.</li>
+                                    <li>Achieved estimated 5–10% raw ingredient cost savings through proactive planning.
+                                    </li>
+                                    <li>Improved warehouse space utilization by avoiding overstock and stockouts.</li>
+                                    <li>Improved cashflow by reducing excess inventory and enabling more predictable
+                                        purchasing cycles.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 

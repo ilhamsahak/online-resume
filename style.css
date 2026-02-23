@@ -450,7 +450,7 @@ h4 {
     }
 
     /* Project cards */
-    .projects-grid {
+    .projects-category-grid {
         gap: 0.9rem;
     }
 
@@ -916,6 +916,85 @@ h4 {
 }
 
 /* ============================================================
+   FEATURED PROJECTS — Tabbed Card
+   ============================================================ */
+.featured-tabs-wrapper {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    background: transparent;
+}
+
+/* Tab navigation bar */
+.featured-tab-nav {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+}
+
+.featured-tab-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+    letter-spacing: 0.2px;
+}
+
+.featured-tab-btn i {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.featured-tab-btn:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.featured-tab-btn.active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-color: transparent;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.45);
+}
+
+/* Tab panels — hidden by default, shown when .active */
+.featured-tab-panel {
+    display: none;
+}
+
+.featured-tab-panel.active {
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .featured-tab-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.72rem;
+    }
+}
+
+/* ============================================================
    FEATURED PROJECT — Showcase Panel (from previous revamp)
    ============================================================ */
 .featured-project {
@@ -1243,6 +1322,40 @@ h4 {
    PROJECT CARDS — Bento Editorial Style
    ============================================================ */
 .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Category sub-heading */
+.projects-category-heading {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+}
+
+.projects-category-heading i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.projects-category-heading::after {
+    content: '';
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+    flex-grow: 1;
+}
+
+/* Per-category card grid */
+.projects-category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 1.25rem;
